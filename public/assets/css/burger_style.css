@@ -1,0 +1,33 @@
+body {
+    background-color: blue;
+    font-family: sans-serif;
+}
+
+.header {
+    width: 950px;
+    height: 30px;
+    padding-left: 15px;
+    color: grey;
+    background-color: palegoldenrod;
+}
+
+#name {
+    display: inline-block
+}
+
+h1, p{
+    text-align: center;
+}
+
+.burger_left {
+    background-color: lightgray
+    
+}
+
+.consumed-burgers {
+    background-color: lightgray
+}
+
+.burger_right {
+    background-color: lightgray
+}

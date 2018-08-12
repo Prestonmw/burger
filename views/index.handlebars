@@ -1,0 +1,63 @@
+<div class="header">
+
+  <h1 ="Devour Burger">Devour Burger</h1>
+
+<div class="main">
+
+  <img src="assets/img/burger.jpg" alt="Burger/>
+ 
+</div>
+<div class="sides">
+  <div class="burger_left">
+  {{#each burgers}}
+  {{#unless this.eaten}}
+  <div class="devoured-burgers">
+  <div class="burgerOrder">
+  {{this.burger_called}}
+  </div>
+
+   <div>
+  <form action="/{{this.id}}?_method=PUT" method="POST">
+  <input type="hidden" name="devoured" value="true">
+  <button type="submit" class="devoured-burgers">
+  Devour it!
+  </button>
+  </form>
+  </div>
+  </div>
+  {{/unless}}
+  {{/each}}
+  </div>
+  
+  <div class="burger_right">
+  {{#each burgers}}
+  {{#if this.devoured}}
+  <div class="devoured-burgers">
+  <div class="burgerOrder">
+  {{this.id}}
+  {{this.burger_name}}
+  <form action="/{{this.id}}?_method=PUT" method="POST">
+  <input type="hidden" name="devoured" value="false">
+  <button type="submit" class="order-again">
+  Order it!
+  </button>
+  </form>
+  </div>
+  </div>
+  {{/if}}
+  {{/each}}
+  </div>
+  </div>
+
+<div class="main">
+<form class="create-update-form" method="POST">
+<div class="form-group">
+<input type="text" id="ca" name="name" placeholder="Your custom burger" required/>
+</div>
+<button type="submit" id="order"> Place Order </button>
+</form>
+
+<p>Customize your burger and recieve your order.</p>
+  
+<div class="line"></div>
+</div>
